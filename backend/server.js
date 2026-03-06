@@ -115,6 +115,7 @@ app.post('/user', (req,res,next) => {
             return next(err)
         }
         res.status(201).json({
+            //err.message от MySQL содержит Duplicate entry ... при повторяющемся email
             message: 'User has been created',
             userId: result.insertId
         })
